@@ -1,6 +1,6 @@
 # IsSitesUp
 
-> Crafted for On-Running Team
+> Crafted for (On-Running)[https://on-running.de] Team 
 ### 02 Dec 2022
 
   This script reads a bunch of links through a text file supplied, validates each of them and checks whether it's online or not and writes it back to a output file
