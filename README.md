@@ -19,7 +19,7 @@ Should use command in the Shell like:
 
 -- -- 
 
- *Note:  Specially crafted for On-Running to showcase various iterimediate to adnvaced concepts with NodeJS*
+ *Note:  Specially crafted for On-Running to showcase various intermediate to adnvaced concepts with NodeJS*
 
 -- --
 

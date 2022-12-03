@@ -1,5 +1,5 @@
 /**
-  Please see README.md once before diving :)
+  Please see README.md once before diving in :)
 */
 
 const fs = require("fs");
@@ -29,7 +29,10 @@ async function isUp(url) {
 
 async function sleep(timeInSec) { return new Promise(res => setTimeout(res, timeInSec * 1000)) }
 
-/** Advanced concurrency pattern **/
+/** 
+  Advanced concurrency pattern 
+*/
+
 async function* asyncMap(iterable, mapFn, numWorkers = 3, ...otherArgs) {
   try {
     const workerCount =
@@ -113,7 +116,9 @@ const checkIfOnline = async (urls, workerId, oFile) => {
 };
 
 
-/** The entrypoint */
+/** 
+  The entrypoint 
+*/
 const main = async () => {
 
   console.time("time");
