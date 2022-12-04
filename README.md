@@ -24,7 +24,8 @@
 
 
 ### How *asyncMap* Looks Like ?
-```
+
+```js
 async function* asyncMap(iterable, mapFn, numWorkers = 3, ...otherArgs) {
   try {
     const workerCount =
