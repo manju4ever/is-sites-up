@@ -12,10 +12,41 @@
 
 ## To Do
   * Add tests
+  * Read input and outfiles as args
 
-Should use command in the Shell like:
+## How to run ?
+* Should use command in the Shell like:
 
-`> node --experimental-fetch index.js`
+  `> node --experimental-fetch index.js`
+
+* Use `links.txt` to add more links if you need
+* Output file at `links.status.txt`
+
+
+### How *asyncMap* Looks Like ?
+```javacript
+async function* asyncMap(iterable, mapFn, numWorkers = 3, ...otherArgs) {
+  try {
+    const workerCount =
+      numWorkers > iterable.length ? iterable.length : numWorkers;
+    const iter = Array.from(iterable).values();
+    const workers = new Array(workerCount)
+      .fill(iter)
+      .map((iter, idx) => mapFn.call(null, iter, idx + 1, ...otherArgs));
+
+    // dispatch multiple workers at the same time 
+    const results = (await Promise.all(workers)).flat();
+
+    // return results as iterable
+    for (let result of results) {
+      yield result;
+    }
+    return true;
+  } catch (err) {
+    throw err;
+  }
+}
+```
 
 -- -- 
 
@@ -23,6 +54,6 @@ Should use command in the Shell like:
 
 -- --
 
- References:
+## References:
  1. [Top 1000 links was found here](https://gist.github.com/jgamblin/62fadd8aa321f7f6a482912a6a317ea3)
   
